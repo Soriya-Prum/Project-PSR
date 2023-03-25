@@ -1,39 +1,45 @@
+""""Rock Paper Scissors"""
 from random import randint
+print("Rock Paper Scissors Game")
+while True:
+    
+    random_num = randint(0, 3)
 
-computer = randint(0, 3)
-
-if computer == 0: 
-    Bot = "rock"
-elif computer == 1:
-    Bot = "paper"
-else:
-    Bot = "scissors"
-
-player = input("Player: ")
-
-if player == Bot:
-    print("Bot = ", Bot)
-    print("Tie")
-elif player == "paper":
-    if Bot == "scissors":
-        print("Bot = ", Bot)
-        print("Bot win!")
+    if random_num == 0:
+        Bot = "rock"
+    elif random_num == 1:
+        Bot = "paper"
     else:
-        print("Bot = ", Bot)
-        print("Player win!")
-elif player == "rock":
-    if Bot == "scissors":
-        print("Bot = ", Bot)
-        print("Player win!")
+        Bot = "scissors"
+
+    player = input("player : ")
+    if player == Bot:
+        print("Bot: ",Bot)
+        print("Tie")
+
+    elif player == "rock":
+        print("Bot: ",Bot)
+        if Bot == "paper":
+            print("You Lose")
+        else:
+            print("You Win")
+
+    elif player == "scissor":
+        print("Bot: ",Bot)
+        if Bot == "rock":
+            print("You Lose")
+        else:
+            print("You Win")
+
+    elif player == "paper":
+        print("Bot: ",Bot)
+        if Bot == "scissors":
+             print("You win")
+        else:
+            print("You Lose")
+            
     else:
-        print("Bot = ", Bot)
-        print("Bot win!")
-elif player == "scissor":
-    if Bot == "paper":
-        print("Bot = ", Bot)
-        print("Player win!")
-    else:
-        print("Bot = ", Bot)
-        print("Bot win!")
-else:
-    print("Please enter the valid choice!")
+        print("Your move is not valid!")
+    replay = input("Do you want to play it again? n/N = exit:  ")
+    if replay == "N" or replay == "n":
+        break
